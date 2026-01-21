@@ -14,10 +14,10 @@ export default function CanvasContainer() {
             {/* <ambientLight intensity={0.5} /> */}
             <pointLight position={[10, 10, 10]} />
             
-             {/* Neon Mesh for Background */}
+             {/* Simple Mesh for Background */}
             <mesh rotation={[0, 0, 0]}>
                  <sphereGeometry args={[1, 32, 32]} />
-                 <meshStandardMaterial color="#00f3ff" wireframe transparent opacity={0.1} />
+                 <meshStandardMaterial color="#ffffff" wireframe transparent opacity={0.1} />
             </mesh>
             
           </Suspense>

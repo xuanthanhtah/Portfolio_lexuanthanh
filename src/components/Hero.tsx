@@ -9,7 +9,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan to-neon-purple drop-shadow-[0_0_15px_rgba(0,243,255,0.5)]"
+        className="text-6xl md:text-8xl font-bold text-white mb-6"
       >
         Creative Developer
       </motion.h1>
@@ -17,7 +17,7 @@ export default function Hero() {
          initial={{ opacity: 0, y: 20 }}
          animate={{ opacity: 1, y: 0 }}
          transition={{ duration: 0.8, delay: 0.2 }}
-         className="mt-6 text-xl md:text-2xl text-gray-300 max-w-2xl"
+         className="mt-6 text-xl md:text-2xl text-gray-400 max-w-2xl"
       >
         Building immersive digital experiences with Next.js, Three.js, and Modern UI.
       </motion.p>
@@ -27,7 +27,7 @@ export default function Hero() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="mt-10"
       >
-        <button className="px-8 py-4 bg-transparent border-2 border-neon-cyan text-neon-cyan rounded-full hover:bg-neon-cyan hover:text-black transition-all duration-300 shadow-[0_0_10px_rgba(0,243,255,0.3)] hover:shadow-[0_0_20px_rgba(0,243,255,0.6)] font-bold tracking-wider">
+        <button className="px-8 py-4 bg-white text-black rounded-full hover:bg-gray-200 transition-all duration-300 font-bold tracking-wider">
           View Projects
         </button>
       </motion.div>

@@ -26,7 +26,7 @@ export default function Skills() {
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-6xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-neon-cyan"
+          className="text-4xl md:text-6xl font-bold mb-16 text-center text-white"
         >
           Skills & Expertise
         </motion.h2>
@@ -65,11 +65,11 @@ export default function Skills() {
         >
             {skills.map((skill, index) => (
                 <SwiperSlide key={index} className="!w-[300px] md:!w-[350px]">
-                     <div className="h-[400px] p-8 rounded-2xl bg-card-bg border border-white/10 backdrop-blur-md flex flex-col items-center justify-center text-center group hover:border-neon-cyan/50 transition-colors">
+                     <div className="h-[400px] p-8 rounded-2xl bg-card-bg border border-white/10 backdrop-blur-md flex flex-col items-center justify-center text-center group hover:border-white/30 transition-colors">
                         <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                             {skill.icon}
                         </div>
-                        <h3 className="text-2xl font-bold mb-4 text-neon-cyan">{skill.name}</h3>
+                        <h3 className="text-2xl font-bold mb-4 text-white">{skill.name}</h3>
                         <p className="text-gray-300 leading-relaxed">
                             {skill.description}
                         </p>
