@@ -65,7 +65,7 @@ export default function Skills() {
         >
             {skills.map((skill, index) => (
                 <SwiperSlide key={index} className="!w-[300px] md:!w-[350px]">
-                     <div className="h-[400px] p-8 rounded-2xl bg-card-bg border border-white/10 backdrop-blur-md flex flex-col items-center justify-center text-center group hover:border-white/30 transition-colors">
+                     <div className="glass-panel h-[400px] p-8 rounded-[2.5rem] flex flex-col items-center justify-center text-center group hover:bg-white/10 transition-colors">
                         <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                             {skill.icon}
                         </div>

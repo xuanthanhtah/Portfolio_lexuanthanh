@@ -27,7 +27,7 @@ export default function Hero() {
          transition={{ duration: 0.8, delay: 0.2 }}
          className="mt-6 text-xl md:text-2xl text-gray-400 max-w-2xl"
       >
-        Frontend Developer with 3+ years experians
+        Frontend Developer with 3+ years experience
       </motion.p>
        <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -42,7 +42,7 @@ export default function Hero() {
               aboutSection.scrollIntoView({ behavior: 'smooth' });
             }
           }}
-          className="px-8 py-4 bg-white text-black rounded-full hover:bg-gray-200 transition-all duration-300 font-bold tracking-wider"
+          className="ios-btn px-10 py-5 rounded-full text-white font-semibold tracking-wider uppercase text-sm"
         >
           View Profile
         </button>

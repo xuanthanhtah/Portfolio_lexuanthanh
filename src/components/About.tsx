@@ -19,9 +19,9 @@ export default function About() {
                  initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="p-8 rounded-2xl bg-card-bg border border-white/10 backdrop-blur-md shadow-xl"
+                className="glass-panel p-10 rounded-[2.5rem]"
             >
-                <p className="text-lg leading-relaxed text-gray-300">
+                <p className="text-xl leading-loose text-gray-200 font-light">
                     I am a passionate frontend developer who loves to bridge the gap between design and technology. 
                     I specialize in building performant, scalable, and visually compelling web applications.
                     <br/><br/>

@@ -48,7 +48,7 @@ export default function Projects() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         whileHover={{ y: -10 }}
-                        className="group relative p-6 rounded-2xl bg-card-bg border border-white/10 backdrop-blur-sm overflow-hidden hover:border-white/30 transition-colors"
+                        className="glass-panel group relative p-6 rounded-[2rem] overflow-hidden transition-all duration-500"
                     >
                          <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                          

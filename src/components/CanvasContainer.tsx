@@ -10,8 +10,7 @@ export default function CanvasContainer() {
     {/* pointer-events-none allows clicking through to HTML content */}
         <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
           <Suspense fallback={null}>
-            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-            {/* <ambientLight intensity={0.5} /> */}
+            <Stars radius={100} depth={40} count={6000} factor={4} saturation={0} fade speed={1} />
             <pointLight position={[10, 10, 10]} />
             
              {/* Simple Mesh for Background */}

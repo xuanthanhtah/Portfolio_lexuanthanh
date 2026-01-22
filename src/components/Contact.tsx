@@ -57,22 +57,22 @@ export default function Contact() {
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="space-y-6 p-8 rounded-2xl bg-card-bg border border-white/10 backdrop-blur-sm"
+                className="space-y-6 p-10 rounded-[2.5rem] glass-panel"
                 onSubmit={(e) => e.preventDefault()}
             >
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-300">Name</label>
-                    <input type="text" className="w-full px-4 py-3 rounded-lg bg-black/30 border border-white/10 focus:border-white focus:outline-none focus:ring-1 focus:ring-white transition-all text-white" placeholder="John Doe" />
+                    <label className="text-sm font-medium text-gray-300 ml-2">Name</label>
+                    <input type="text" className="ios-input w-full px-6 py-4 rounded-2xl text-white placeholder-gray-500" placeholder="John Doe" />
                 </div>
                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-300">Email</label>
-                    <input type="email" className="w-full px-4 py-3 rounded-lg bg-black/30 border border-white/10 focus:border-white focus:outline-none focus:ring-1 focus:ring-white transition-all text-white" placeholder="john@example.com" />
+                    <label className="text-sm font-medium text-gray-300 ml-2">Email</label>
+                    <input type="email" className="ios-input w-full px-6 py-4 rounded-2xl text-white placeholder-gray-500" placeholder="john@example.com" />
                 </div>
                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-300">Message</label>
-                    <textarea rows={4} className="w-full px-4 py-3 rounded-lg bg-black/30 border border-white/10 focus:border-white focus:outline-none focus:ring-1 focus:ring-white transition-all text-white" placeholder="Tell me about your project..." />
+                    <label className="text-sm font-medium text-gray-300 ml-2">Message</label>
+                    <textarea rows={4} className="ios-input w-full px-6 py-4 rounded-2xl text-white placeholder-gray-500 resize-none" placeholder="Tell me about your project..." />
                 </div>
-                <button className="w-full py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-colors">
+                <button className="ios-btn w-full py-4 rounded-xl text-white font-bold tracking-wide mt-4">
                     Send Message
                 </button>
             </motion.form>
