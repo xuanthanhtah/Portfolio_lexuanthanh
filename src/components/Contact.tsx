@@ -2,8 +2,26 @@
 
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { useState, useTransition } from "react";
+import { submitContactForm } from "@/actions/contactAction";
 
 export default function Contact() {
+  const [isPending, startTransition] = useTransition();
+  const [status, setStatus] = useState<{ success?: boolean; error?: string } | null>(null);
+
+  const handleSubmit = async (formData: FormData) => {
+    setStatus(null);
+    startTransition(async () => {
+      const result = await submitContactForm(formData);
+      if (result.success) {
+        setStatus({ success: true });
+        (document.getElementById("contact-form") as HTMLFormElement).reset();
+      } else {
+        setStatus({ error: result.error || "Something went wrong" });
+      }
+    });
+  };
+
   return (
     <section id="contact" className="min-h-screen py-20 px-4 flex items-center justify-center relative z-10">
       <div className="max-w-4xl w-full">
@@ -54,26 +72,65 @@ export default function Contact() {
             </motion.div>
 
             <motion.form 
+                id="contact-form"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="space-y-6 p-10 rounded-[2.5rem] glass-panel"
-                onSubmit={(e) => e.preventDefault()}
+                action={handleSubmit}
             >
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-300 ml-2">Name</label>
-                    <input type="text" className="ios-input w-full px-6 py-4 rounded-2xl text-white placeholder-gray-500" placeholder="John Doe" />
+                    <label className="text-sm font-medium text-gray-300 ml-2" htmlFor="name">Name</label>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        id="name"
+                        required
+                        className="ios-input w-full px-6 py-4 rounded-2xl text-white placeholder-gray-500" 
+                        placeholder="John Doe" 
+                    />
                 </div>
                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-300 ml-2">Email</label>
-                    <input type="email" className="ios-input w-full px-6 py-4 rounded-2xl text-white placeholder-gray-500" placeholder="john@example.com" />
+                    <label className="text-sm font-medium text-gray-300 ml-2" htmlFor="email">Email</label>
+                    <input 
+                         type="email" 
+                         name="email"
+                         id="email"
+                         required
+                         className="ios-input w-full px-6 py-4 rounded-2xl text-white placeholder-gray-500" 
+                         placeholder="john@example.com" 
+                    />
                 </div>
                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-300 ml-2">Message</label>
-                    <textarea rows={4} className="ios-input w-full px-6 py-4 rounded-2xl text-white placeholder-gray-500 resize-none" placeholder="Tell me about your project..." />
+                    <label className="text-sm font-medium text-gray-300 ml-2" htmlFor="message">Message</label>
+                    <textarea 
+                        rows={4} 
+                        name="message"
+                        id="message"
+                        required
+                        className="ios-input w-full px-6 py-4 rounded-2xl text-white placeholder-gray-500 resize-none" 
+                        placeholder="Tell me about your project..." 
+                    />
                 </div>
-                <button className="ios-btn w-full py-4 rounded-xl text-white font-bold tracking-wide mt-4">
-                    Send Message
+
+                {status?.error && (
+                    <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200">
+                        {status.error}
+                    </div>
+                )}
+                
+                {status?.success && (
+                    <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20 text-green-200">
+                        Message sent successfully!
+                    </div>
+                )}
+
+                <button 
+                    type="submit" 
+                    disabled={isPending}
+                    className="ios-btn w-full py-4 rounded-xl text-white font-bold tracking-wide mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                    {isPending ? 'Sending...' : 'Send Message'}
                 </button>
             </motion.form>
         </div>
